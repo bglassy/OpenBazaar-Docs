@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.png">
+
+	<title>FAQ - OpenBazaar Docs</title>
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+        
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+        <!-- Preloader -->
+<div id="preloader">
+	<div id="status">&nbsp;</div>
+</div>
+
+        
+        <div class="header_wrapper">
+            <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">OpenBazaar Docs</a>
+        </div>
+        
+       
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#obdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+               
+                
+            </ul>
+        </div>
+    </div>
+                <div class="navbar-two" role="navigation">
+    <div class="container">
+<!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav" style="">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../02.-Getting-Started/">Getting Started</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../03.-OpenBazaar-Protocol/">Protocol</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../04.-Marketplaces/">Marketplaces</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../05.-Roadmap/">Roadmap</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../06.-Developers/">Developers</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../07.-Articles/">Articles</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../08.-Reference-Documentation/">References</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">FAQ</a>
+                    </li>
+                
+                
+                </ul>
+            
+        </div>
+    </div>
+</div>
+        </div>
+
+        <div class="container" style="margin-top: 60px;">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#9-frequently-asked-questions">9. Frequently Asked Questions</a></li>
+        
+            <li><a href="#general">General</a></li>
+        
+            <li><a href="#payments-without-bitcoin">Payments without Bitcoin</a></li>
+        
+            <li><a href="#illicit-items">Illicit Items</a></li>
+        
+    
+          <hr>
+        <h4 style="text-align: center;"><a href="https://github.com/OpenBazaar/OpenBazaar/wiki">Contribute to the Docs</a></h4>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="9-frequently-asked-questions">9. Frequently Asked Questions</h1>
+<h2 id="general">General</h2>
+<h3 id="does-openbazaar-cost-anything">Does <em>OpenBazaar</em> cost anything?</h3>
+<p>No... and it never will.</p>
+<h3 id="does-it-cost-anything-to-list-items-on-the-network">Does it cost anything to list items on the network?</h3>
+<p>No... and it never will.</p>
+<h3 id="do-i-need-to-be-online-to-sell-items">Do I need to be online to sell items?</h3>
+<p>At this stage, yes. When you create a contract for an item, you need to keep your node online for others to be able to download your contracts and place order.</p>
+<p>In the future, contracts will be embedded into the distributed hash table (DHT) and shared by nearby nodes on the network over a period of a few days. This will create a temporary cache of contracts that can be accessed without the merchant needing to be online. In addition, orders will be encrypted and embedded into the DHT and shared by nodes so that the merchant can access orders even if the buyer isn't online.</p>
+<h3 id="can-i-get-a-notification-when-my-item-has-received-an-order-or-when-my-order-has-been-processed">Can I get a notification when my item has received an order, or when my order has been processed?</h3>
+<p>No, but this is an important feature we will be working on in the future.</p>
+<h3 id="is-there-a-mobile-application-for-openbazaar">Is there a mobile application for <em>OpenBazaar</em>?</h3>
+<p>Not yet.</p>
+<h3 id="will-i-need-to-run-a-node-to-browse-or-buy-things-from-openbazaar">Will I need to run a node to browse or buy things from <em>OpenBazaar</em>?</h3>
+<p>There are some emerging third party services that will act as a search engine for browsing listings on <em>OpenBazaar</em>, such as <a href="https://bazaarbay.org">BazaarBay</a>.</p>
+<p>You will need to run a node to buy items from users on <em>OpenBazaar</em> at this stage. You can use services such as <a href="https://provistor.com">Provistor</a> that faciliate running a node.</p>
+<hr />
+<h2 id="payments-without-bitcoin">Payments without Bitcoin</h2>
+<h3 id="can-i-buy-and-sell-things-with-altcoins-instead-of-bitcoin">Can I buy and sell things with altcoins instead of Bitcoin?</h3>
+<p>Yes, but using a third party exchange such as <a href="https://shapeshift.io">Shapeshift</a>. Altcoin support is not built into the client.</p>
+<h3 id="can-i-buy-and-sell-things-with-fiat-currency">Can I buy and sell things with fiat currency?</h3>
+<p>Yes, but using a third party exchange like <a href="https://coinbase.com">Coinbase</a>, <a href="https://circle.com">Circle</a>, <a href="https://coinjar.com">CoinJar</a> etc.</p>
+<h3 id="why-only-bitcoin">Why only Bitcoin?</h3>
+<p>We believe in Bitcoin. While there may be several other crypto-commodities created with interesting properties, only one will remain the 'backend' medium-of-exchange: Bitcoin.</p>
+<hr />
+<h2 id="illicit-items">Illicit Items</h2>
+<h3 id="is-this-a-new-silk-road">Is this a new Silk Road?</h3>
+<p>Absolutely not. The Silk Road was a centralized platform, controlled directly by a small group who ran it for profit. The marketplace was built specifically for a small subset of trade: illicit goods. </p>
+<p><em>OpenBazaar</em> is entirely different. It’s a decentralized platform, not controlled by anyone, and not run for profit. It’s not being built for any subset of trade, but gives anyone in the world the power to buy and sell any type of goods and services with anyone else, using Bitcoin.</p>
+<p><em>OpenBazaar</em> isn’t Silk Road - version 2, it’s E-Commerce - version 2.</p>
+<h3 id="how-will-you-keep-illicit-goods-off-of-openbazaar">How will you keep illicit goods off of <em>OpenBazaar</em>?</h3>
+<p><em>OpenBazaar</em> is a protocol for trading goods online, and a decentralized network for people to communicate with each other. Since the network isn’t centrally controlled (by us or anyone), we cannot directly prevent people from selling illicit goods.</p>
+<p>The platform uses a reputation and rating system, as well as allowing reputable third parties help manage trade. We expect these checks and balances will strongly encourage legitimate trade on the network.</p>
+<p>Sellers on the <em>OpenBazaar</em> network host their own products and are therefore directly responsible for complying with local laws (and their own conscience) when listing items or services. Users engaged in illicit activity cannot hide behind a third party service.</p>
+<p>The world doesn’t have a standard protocol for trading goods and services online, nor does it have a network to share information about those goods and services. <em>OpenBazaar</em> finally creates a protocol and network that is free and open for all. As such, we expect that the use of <em>OpenBazaar</em> will largely reflect how society trades at large - almost entirely legitimate, positive trade with a small portion of people using it for illicit activity. Those that attempt to sell illicit material on <strong>OpenBazaar</strong> do so at significant risk to themselves.</p>
+<h3 id="what-about-openbazaars-beginnings-as-dark-market">What about <em>OpenBazaar</em>’s beginnings as Dark Market?</h3>
+<p>Dark Market was a winning entry in a Toronto hackathon in April 2014. Following the release of the source code on Github, the developers of Dark Market decided to discontinue the project. A few days later, Brian Hoffman forked the project to continue development. Brian renamed the project to <em>OpenBazaar</em>, which reflected a shift in vision to create a free and open marketplace for all goods and services.</p>
+<p>Since April 2014, we’ve seen <em>OpenBazaar</em> change substantially from the original Dark Market project. Only a small amount of the original code remains, and the majority of the features have been built by the <em>OpenBazaar</em> community, including the use of Ricardian Contracts, HD signing keys, and kademlia DHT.</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <p>Copyright &copy; 2015&nbsp; <a href="https://openbazaar.org">OpenBazaar</a>. <a href="https://creativecommons.org/licenses/by/4.0/">Some rights reserved</a>.</p>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../obdocs/js/search.js" src="../obdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="obdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Search the docs
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="obdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="obdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Preloader -->
+<script type="text/javascript">
+	//<![CDATA[
+		$(window).load(function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(); // will first fade out the loading animation
+			$('#preloader').delay(800).fadeOut('slow'); // will fade out the white DIV that covers the website.
+			$('body').delay(800).css({'overflow':'visible'});
+		})
+	//]]>
+</script> 
+
+    </body>
+</html>

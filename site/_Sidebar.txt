@@ -1,0 +1,17 @@
+### Community
+
+[OpenBazaar Website](https://openbazaar.org)  
+[Blog](https://blog.openbazaar.org)  
+[Help Desk](https://openbazaar.zendesk.com/hc/en-us)
+
+The **OpenBazaar community** is active across 3 platforms:
+
+1. [Slack](https://openbazaar-slackin-drwasho.herokuapp.com/)
+  + Majority of theoretical and technical discussion takes place on Slack
+  + Email us as [project@openbazaar.org](mailto:project@openbazaar.org) for access
+2. [Reddit](https://reddit.com/r/openbazaar)
+3. [IRC](https://kiwiirc.com/client)
+  + Channel: #openbazaar on Freenode
+  + Less active these days since we migrated to Slack
+
+All other inquiries can be made to [project@openbazaar.org](mailto:project@openbazaar.org).

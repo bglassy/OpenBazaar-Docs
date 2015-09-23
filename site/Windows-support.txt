@@ -1,0 +1,34 @@
+##Supported Windows Versions
+
+OpenBazaar supports only versions of Windows 7 and later. Windows XP is considered an insecure operating system since it is no longer supported by Microsoft. As OpenBazaar is a security oriented application we can't support an insecure operating system.
+
+## Running OpenBazaar in Windows
+
+You can find the Windows binary [here](https://openbazaar.org/downloads/openbazaar-beta-3.0.zip), and the signature [here](https://openbazaar.org/downloads/openbazaar-beta-3.0.zip.sig).
+
+## Troubleshooting 
+
+If the web interface doesn't appear it would be really helpful for us if you provide us some feedback. Please open cmd.exe and run OpenBazaar.exe from it. Sending us the console output and the log file logs\production.log will be necessary for providing you assistance. You should report bugs on [github]( github.com/OpenBazaar/OpenBazaar/issues). We are also available to provide support on the OpenBazaar [subreddit](http://www.reddit.com/r/OpenBazaar/)
+
+## Developing in windows
+
+#### Requirements 
+* [Git for windows](http://git-scm.com/download/win)
+* [Microsoft Visual studio 2008](http://go.microsoft.com/?linkid=7729279)
+* Powershell 3
+* Enable running [powershell scripts](https://technet.microsoft.com/en-us/library/ee176961.aspx) for your user account
+It is assumed that you capable of using git and cloning our repo so you can start developing in windows
+
+#### Powershell scripts
+In the root folder of the source code there are three powershell scripts that can help you configure your
+environment and start OpenBazaar.
+* `configure.ps1`: Downloads and installs in the bin subfolder Python 2.7, OpenSSL, GnuPG and all the required packages for windows. Note that for this step it is nescesary that some requirements get compiled so you either need Visual Studio 2008 or a MinGW environment (untested, only Visual Studio is officialy supported).
+* `run.ps1`: Runs OpenBazaar.
+* `test.ps1`: Runs the testsuite of OpenBazaar.
+
+_Note that the configuration step installs OpenSSL and GnuPG in the bin folder and this requires to give administrator credentials before the installation of these two components can continue. The decision for installing these two locally was based on the fact that
+several programs bundle these components and as a result it is possible that a file from a different program can be used. In order to uninstall them you can run `configure.ps1 clean` to uninstall them._
+
+#### Creating an exe distribution
+
+Running `configure.ps1 exe` will invoke the py2exe package that collects all required files, creates an executable file so you can distribute OpenBazaar and packs all python scripts and libraries. The collected files are written in the folder \installers\windows\dist_exe in your source tree.

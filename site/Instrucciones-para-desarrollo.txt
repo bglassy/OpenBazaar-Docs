@@ -1,0 +1,134 @@
+### Primer paso para diagnóstico de averías
+_Ya está redireccionando el puerto 12345 en su enrutador o tiene una dirección IP dedicada?_
+
+**Debe redireccionar el puerto 12345!**
+
+Si está utilizando NAT, asegúrese de utilizar la redirección de puertos. Éste es el primer problema que muchas personas experimentan.
+
+## Ubuntu (posiblemente otras versiones de Linux - déjennos saber)
+
+### Instalación nativa
+
+Abra el terminal y corra los siguientes comandos con los privilegios adecuados (i.e. sudo):
+
+1. `apt-get update`
+2. `apt-get install git python-dev python-pip g++ libjpeg-dev zlib1g-dev sqlite3`
+3. `cd /opt`
+4. `git clone https://github.com/OpenBazaar/OpenBazaar.git`
+5. `wget https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py`
+6. `python get-pip.py`
+7. `pip install tornado pyzmq python-gnupg ecdsa twisted pyelliptic pycountry requests qrcode pillow python-obelisk`
+8. `cd /opt/OpenBazaar`
+9. `bash run.sh` - Inicia *OpenBazaar*
+10. Abra su navegador web y dirígase a `127.0.0.1:8888`
+11. Comienze a utilizar OpenBazaar!
+
+### Vagrant
+
+Estas instrucciones descargan un imagen para VirtualBox (Ubuntu Trusty) y utiliza Vagrant (>=1.3.0) para configurar un nódo de OpenBazaar dentro del ambiente virtual. Cuando el nódo ha sido iniciado, puede navegar en su máquina local a http://localhost:8888 para acceder al cliente. Esta configuración deberá tomar no más de 10GB y aproximadamente una hora. Estas instrucciones deberán incluir todo el código necesario para iniciar OpenBazaar.
+
+1. Este ejemplo está basado en una máquina huésped Ubuntu Trusty. No funciona dentro de una máquina virtual.
+
+    `sudo apt-get update`
+
+    `sudo apt-get install virtualbox git vagrant`
+
+2. Clone openbazaar:
+
+    `git clone https://github.com/OpenBazaar/OpenBazaar.git`
+
+    `cd OpenBazaar`
+
+3. Actualize Vagrant (esto tomará un tiempo!)
+
+    `vagrant up`
+
+4. Inicie una sesión con Vagrant:
+
+    `vagrant ssh`
+
+5. Inicie el nódulo de OpenBazaar:
+
+    **Production:**`cd /vagrant && ./run.sh production && tail -f logs/production.log`
+    **Development:**`cd /vagrant && ./run.sh && tail -f logs/development.log`
+
+6. Ahora regrese a su máquina huésped y en su navegador web dirígase a la siguiente dirección:
+
+    `http://127.0.0.1:8888`
+
+#### Dependencias
+
+**OJO:** Estas dependencias son para referencia. No tienen que estar instaladas manualmente si utiliza el "Quick Guide".
+
+- https://github.com/warner/python-ecdsa
+- https://github.com/darkwallet/python-obelisk
+
+`pip install pyzmq`
+`pip install tornado`
+`pip install pyelliptic`
+`pip install pycountry`
+`pip install PIL`
+`pip install python-obelisk`
+`pip install miniupnpc`
+`sudo apt-get install sqlite3`
+
+## Usuarios de OSX
+
+Puede instalar nativamente o utilizar Vagrant. Si decide utilizar Vagrant, simplemente siga las instrucciones anteriores para Linux. Si decide instalar nativamente, siga las siguientes instrucciones.
+
+1. Instale [Homebrew](http://brew.sh/)
+1. `brew update`
+1. `brew upgrade`
+1. `brew doctor`
+1. `brew install wget gpg`
+1. `pip install tornado pyzmq python-gnupg ecdsa twisted pyelliptic pycountry requests qrcode pillow python-obelisk websocket-client miniupnpc`
+1. `sudo port install sqlite3` (no tienes/quieres macports? siempre puedes hacer `brew install sqlite3` y hacer el enlace de forma manual, por ej. `ln -s /usr/local/Cellar/sqlite/3.8.5_1/bin/sqlite3 /usr/local/bin/sqlite3`)
+1. `cd /opt`
+1. `git clone https://github.com/OpenBazaar/OpenBazaar.git`
+1. `cd /opt/OpenBazaar`
+1. `bash run.sh` - Inicia OpenBazaar
+1. Inicie su navegador web y dirígase a la dirección `127.0.0.1:8888`
+1. Comienze a utilizar OpenBazaar!
+
+En OSX existe un error CLANG al instalar pyzmq pero puede utilizar el siguiente comando para ignorar los avisos:
+
+`sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future easy_install pyzmq`
+
+Si esto no funciona existe una forma mas simple de arreglar el problema de "symbol not found", asegurarnos de que Homebrew OpenSSL esté enlazado correctamente al ejecutar:
+
+`brew link openssl --force`
+
+luego podrá utilizar run.sh para iniciar OpenBazaar normalmente.
+
+### Conflictos con ./run_dev.sh
+Si está recibiendo errores que dicen `ZMQError: Can't assign requested address`, entonces lo más probable es que debe utilizar unos "loopback adapters" para las direcciones IP más altas que 127.0.0.1.
+
+sudo ifconfig lo:1 127.0.0.2
+sudo ifconfig lo:2 127.0.0.3
+sudo ifconfig lo:3 127.0.0.4
+
+### Pruebas
+Instale [behave](https://github.com/behave/behave) e inicie `behave` dentro de la carpeta de OpenBazaar. Las mismas pruebas se encuentran en la carpeta `features`.
+
+### Conflictos
+Si está recibiendo una queja sobre no tener PIL y está utilizando Ubuntu, intente:
+`sudo apt-get install python-imaging`
+
+Si está teniendo problemas como [esto](https://gist.githubusercontent.com/joshlemer/b1d2a8173889c368a8b1/raw/b64ac4b3db7c62f00469d57412a6ee6c1bf3f0cb/OpenBazaarError) cuando intenta correr `vagrant up`, intente los siguientes pasos:
+
+  Abra la interfaz gráfica del cliente VirtualBox, seleccione la máquina OpenBazaar e eliga `Start`. Si la máquina no arranca pero larga un error como [éste](https://gist.githubusercontent.com/joshlemer/b1d2a8173889c368a8b1/raw/bb0da8ca637e07a17d6905cfcdc9ecbb3781cf16/VirtualBoxError), entonces tendrá que seguir los consejos de este [enlace](https://github.com/mitchellh/vagrant/issues/2157). Si todavía está teniendo problemas, tendrá que activar Hardware Virtualizado en el BIOS de su sistema.
+
+### pyelliptic
+Si no puede accesar ningún mercado, asegúrese de utilizar pyelliptic `>= 1.5.3`. Puede verificar su versión de pyelliptic con `pip freeze`.
+
+En MacOS, puede que tenga problemas con su versión de OpenSSL. Es posible que reciba un error como el siguiente:
+
+```
+AttributeError: dlsym(0x7f9d8b4fbf90, PKCS5_PBKDF2_HMAC): symbol not found
+```
+
+Este error está relacionado a un [error de pyelliptic](https://github.com/yann2192/pyelliptic/issues/11). Puede superar este error al correr el comando `run.sh` de la siguiente manera:
+
+```
+DYLD_LIBRARY_PATH=/usr/local/Cellar/openssl/1.0.1f/lib bash run.sh
+```
