@@ -1,5 +1,5 @@
 # OpenBazaar Docs
-### A platform for building auto-updated static OpenBazaar documentation
+### OpenBazaar Documentation - a python based documentation compiling platform.
 
 ###Installation
 You will need Python and PIP installed. The Docs platform supports Python 2.6, 2.7, 3.3 and 3.4.
